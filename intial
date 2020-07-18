@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AshJokeTeller</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ4nBJQl8jNrCidlqmcqOBoveejSiLuPXthMQ&usqp=CAU">
+	<style defer type="text/css">
+		body{
+			background-image: url("https://www.xtrafondos.com/wallpapers/resized/guason-3416.jpg?s=large");
+			margin: 10px;
+			padding: 45px;
+			/*background-color: orange;*/
+			animation: arvi 2s;
+			font-family: 'Montserrat', sans-serif;
+			/*animation: ashwin 3s;*/
+			color: white;
+			font-size: 50px;
+			/*backdrop-filter:blur(2px);*/
+		}
+		@keyframes ashwin{
+			20%{
+				background-color: violet
+			}
+			40%{
+				background-color: orange
+			}
+			60%{
+				background-color: lightblue
+			}
+			80%{
+				background-color: transparent;
+				color: black;
+			}
+			100%{
+				background-color: pink;
+			}
+		}
+		h1{
+			text-align: center;
+			padding-top: 12px
+		}
+	</style>
+	<script type="text/javascript">
+		async function ash()
+		{
+			const data = await fetch("http://api.icndb.com/jokes/random");
+			const value = await data.json();
+			// console.log(value.value.joke);
+			const ash = document.getElementById('win');
+			ash.innerHTML += `${value.value.joke}`;
+		
+		}
+		ash();
+	</script>
+</head>
+<body>
+	<h1>Ash Jokes</h1>
+	<h4>Do refresh for New Jokes:)</h4>
+	<h3 id="win"></h3>
+</body>
+</html>
