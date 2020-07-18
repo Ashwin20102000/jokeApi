@@ -18,26 +18,57 @@
 			/*backdrop-filter:blur(2px);*/
 		}
 		@keyframes ashwin{
-			20%{
-				background-color: violet
+			from{
+				/*background-color: violet;*/
+				/*background-image: url(https://images.wallpapersden.com/image/wxl-joaquin-phoenix-as-joker_64166.jpg);*/
+				background-color: transparent;
 			}
-			40%{
-				background-color: orange
+			/*40%{
+				background-color: lightgreen
 			}
 			60%{
 				background-color: lightblue
 			}
 			80%{
-				background-color: transparent;
-				color: black;
-			}
-			100%{
-				background-color: pink;
+				background-color: skyblue;
+				/*color: black; }*/
+			
+			to{
+				background-color: white;
+				color: black
 			}
 		}
 		h1{
 			text-align: center;
-			padding-top: 12px
+			padding-top: 12px;
+			border-style:double;
+			border-radius: 47px;
+			backdrop-filter:blur(15px);
+		}
+		#ash{
+			position: absolute;
+			font-weight: bold;
+			font-size: 17px;
+			left: 43%;
+			top: 272px;
+			width: 130px;
+    		height: 52px;
+    		border-radius: 20px;
+    		outline: none;
+    		border-style: double;
+    		transition: width 1s;
+    		animation: ashwin 2s;
+    		animation-iteration-count: infinite;
+		}
+		button:active{
+			background-color: cornflowerblue;
+			width:200px;
+			color: white;
+			transform:scale(1.1);
+		}
+		button:hover{
+			background-color: black;
+			color: white;
 		}
 	</style>
 	<script type="text/javascript">
@@ -47,7 +78,7 @@
 			const value = await data.json();
 			// console.log(value.value.joke);
 			const ash = document.getElementById('win');
-			ash.innerHTML += `${value.value.joke}`;
+			ash.innerHTML = `${value.value.joke}`;
 		
 		}
 		ash();
@@ -55,7 +86,8 @@
 </head>
 <body>
 	<h1>Ash Jokes</h1>
-	<h4>Do refresh for New Jokes:)</h4>
-	<h3 id="win"></h3>
+	<button id="ash" onclick="ash()">Tap For Joke!!</button>
+	<h3 id= "win"></h3>
+	
 </body>
 </html>
