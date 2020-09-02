@@ -1,3 +1,3 @@
 # jokeApi
-I created, This By using Obtaining Api
+I created, This By using Api
 Normal Html :)
